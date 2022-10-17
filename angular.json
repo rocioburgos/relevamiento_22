@@ -30,7 +30,8 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": ["src/theme/variables.scss", "src/global.scss",  
+            "node_modules/ngx-spinner/animations/ball-scale-multiple.css" ],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,
@@ -157,5 +158,5 @@
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
     }
-  }
+  } 
 }

@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header  >
+  <ion-toolbar>     
+    <ion-icon name="log-out-outline" (click)="cerrarSesion()" slot="end" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)"
+ size = "medium" 
+ color = "#fff" 
+type = "ball-scale-multiple" >
+  <p style="color: white" > Cerrando sesión... </p></ngx-spinner>
+   
+ <ion-content [fullscreen]="true" >
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="centrado_btn">
+  <a  [routerLink]="['/estadisticas']">
+    <ion-button color="tertiary" >
+      <ion-icon name="stats-chart-outline"></ion-icon>Estadística 
+    </ion-button>
+  </a>
+  
+    <a [routerLink]="['/misfotos']">
+      <ion-button  color="secondary" >
+        <ion-icon name="image-outline">
+        </ion-icon>Mis Fotos
+      </ion-button>
+    </a>
+  </div>
+
+
+  <div class="contenedor4a">
+    <a [routerLink]="['/cosaslindas']"><img src="./../../assets/fondo-home/a.webp"></a>
+  </div>
+  <div class="contenedor4b">
+        <a [routerLink]="['/cosasfeas']"><img src="./../../assets/fondo-home/cosas-feas.jpg" alt=""></a> 
   </div>
 </ion-content>

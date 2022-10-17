@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-button color="warning" slot="start" [routerLink]="['/home']">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-title size="small" >Cosas Lindas</ion-title> 
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)='tomarFoto()'><ion-icon name="camera-outline"  ></ion-icon></ion-fab-button>
+  </ion-fab>
+
+  <div *ngFor="let item of contact; let index=index">
+    <ion-card>
+      <ion-card-subtitle> {{item.usuario}} </ion-card-subtitle>
+      <ion-card-content *ngFor='let img of item.imagenes'>
+  
+        <img src="{{img}}" width="150px"> 
+      </ion-card-content>
+      <ion-card-header>
+    
+        <ion-card-subtitle>{{item.fullDate | fecha}}</ion-card-subtitle> 
+      </ion-card-header>
+
+      <ion-button *ngIf="!item.like_actualuser" (click)="votar(item.doc_id )" size="small"> 
+        <ion-icon name="heart-outline"  ></ion-icon>
+      </ion-button>
+
+      <ion-button *ngIf="item.like_actualuser" (click)="votar(item.doc_id )" size="small">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+
+    </ion-card>
+  </div>
+
+  <!-- Spinner -->
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)"
+size = "medium" 
+color = "#fff" 
+type = "ball-scale-multiple" >
+ <p style="color: white" >Cargando...</p></ngx-spinner>
+  
+</ion-content>
+
+

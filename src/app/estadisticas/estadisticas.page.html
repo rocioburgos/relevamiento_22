@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="warning" slot="start" [routerLink]="['/home']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title size="small" >Estadísticas</ion-title> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-radio-group class='centrado_radio' value="linda" (ionChange)="checkValue($event)">
+    <ion-item class="item_radio">
+      <ion-radio value="linda" select></ion-radio>
+      <ion-label> Cosas Lindas</ion-label>
+
+      <ion-radio value="feas"></ion-radio>
+      <ion-label> Cosas Feas</ion-label>
+    </ion-item>
+  </ion-radio-group>
+
+
+  <!--COSAS LINDAS--> 
+ <div *ngIf="estadisticaMostrar =='linda'" id="pie-chart-parent">
+
+    <ngx-charts-pie-chart style="margin-left: 30px;" (window:resize)="onResize($event)" [view]="view"
+      [scheme]="colorScheme" [results]="single" [gradient]="gradient" [doughnut]="isDoughnut"
+      (select)="onSelect($event)">
+    </ngx-charts-pie-chart>
+  </div>
+  <!--COSAS FEAS-->
+   <div *ngIf="estadisticaMostrar =='feas'" id="pie-chart-parent">
+    
+    <ngx-charts-bar-vertical (window:resize)="onResize($event)" [view]="view" [scheme]="colorScheme"
+      [results]="single_barras" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </div>
+
+
+  <!---------------MODAL ---------------------------------->
+  <div id="openModal" class="modalDialog" *ngIf="showModal" style="
+ 
+ justify-content: center;
+ z-index: 1;
+ background: var(--ion-color-success);
+ position: absolute;
+ margin: 50px;
+ top: 5%;">
+
+    <ion-button color='success' (click)="hideModal()" title="Close" class="close">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-item lines='full' class='input-wrapper' *ngFor="let foto of foto_modal.imagenes">
+      <img src="{{foto}}" *ngIf="!showSpinner">
+    </ion-item>
+    <ion-spinner *ngIf="showSpinner" name="circular" color="warning"></ion-spinner>
+    <small>
+      <ion-icon name="heart"></ion-icon> {{foto_modal.cantidad_likes || 0}} <br>
+      <ion-icon name="person"></ion-icon> {{foto_modal.usuario}} <br>
+      <ion-icon name="calendar"></ion-icon> {{foto_modal.fullDate | fecha}}
+    </small>
+
+  </div>
+  <ngx-spinner bdColor="rgba(0,0,0,0.9)" size="large" color="#e8ea32" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white">Cargando... </p>
+  </ngx-spinner>
+</ion-content>

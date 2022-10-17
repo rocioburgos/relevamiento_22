@@ -24,3 +24,51 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@import "~ngx-spinner/animations/ball-scale-multiple.css";
+
+
+p, h1,h2,h3,h4,h5,label,ion-label,input {
+    font-family: 'Lato';
+    color: black;
+    font-size: 20px;
+  }
+  ion-toolbar {
+    --background: var(--ion-color-warning);
+    ion-title {
+      color: var(--ion-color-light);
+      font-size: 24px;
+    }
+    a {
+      --color: var(--ion-color-light);
+      margin-right: 1em;
+    }
+  }
+  ion-content {
+    --ion-background-color: #c0f2e4;
+    --ion-background-color-rgb: 192,242,228;
+  
+    --ion-text-color: #000000;
+    --ion-text-color-rgb: 0,0,0;
+  
+    --ion-color-step-50: #b6e6d9;
+    --ion-color-step-100: #addacd;
+    --ion-color-step-150: #a3cec2;
+    --ion-color-step-200: #9ac2b6;
+    --ion-color-step-250: #90b6ab;
+    --ion-color-step-300: #86a9a0;
+    --ion-color-step-350: #7d9d94;
+    --ion-color-step-400: #739189;
+    --ion-color-step-450: #6a857d;
+    --ion-color-step-500: #607972;
+    --ion-color-step-550: #566d67;
+    --ion-color-step-600: #4d615b;
+    --ion-color-step-650: #435550;
+    --ion-color-step-700: #3a4944;
+    --ion-color-step-750: #303d39;
+    --ion-color-step-800: #26302e;
+    --ion-color-step-850: #1d2422;
+    --ion-color-step-900: #131817;
+    --ion-color-step-950: #0a0c0b;
+  }

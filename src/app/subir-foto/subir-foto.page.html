@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir Foto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content *ngFor='let img of paths'> 
+      <img src="{{img}}" >
+    </ion-card-content>
+  </ion-card>
+  <!--HABILITAR CUANDO ESTE OK LA IMAGEN-->
+  <div *ngIf='habilitar' class="centrado">
+    <ion-button  expand="full" color="tertiary" (click)='tomarFoto()'>
+      Tomar otra foto<ion-icon name="camera-reverse-outline"></ion-icon>
+    </ion-button><br>
+    <ion-button expand="full" color="success" (click)='subirFotos()'>
+      Subir foto<ion-icon name="cloud-upload-outline"></ion-icon>
+    </ion-button><br>
+    <ion-button expand="full" color="danger" (click)="cancelar()">
+     Cancelar<ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button> 
+  </div>
+</ion-content>
+
+<!-- Spinner -->
+<ngx-spinner  bdColor = "rgba(0, 0, 0, 0.8)"
+size = "medium" 
+color = "#fff" 
+type = "ball-scale-multiple">
+  <p style="color: white">Subiendo...</p>
+</ngx-spinner> 

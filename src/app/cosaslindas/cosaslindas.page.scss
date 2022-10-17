@@ -1,0 +1,16 @@
+ion-toolbar {
+    --background: var(--ion-color-warning);
+    ion-title {
+      color: var(--ion-color-light);
+      font-size: 24px;
+    }
+    a {
+      --color: var(--ion-color-light);
+      margin-right: 1em;
+    }
+  }
+
+  img{
+    width:150%;
+  height:150%;
+  }

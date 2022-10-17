@@ -1,0 +1,22 @@
+ion-content{
+ 
+  --background: linear-gradient(0deg, rgba(194,255,192,1) 0%, rgb(129, 231, 125) 56%);
+}
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+.container{
+  margin-top: 50%; 
+  -webkit-animation:rotate-center 1s ease-in-out both;animation:rotate-center 1s ease-in-out both;
+  img{
+    height: 170px;
+    margin-top: 0%; 
+  }
+}
+ 
+p {
+  
+  color:black;
+  font-size: 250%;
+  animation-duration: 4s;
+  animation-name: fadeIn; 
+  font-family: "Fantasy", fantasy, serif;
+}
